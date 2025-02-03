@@ -1,0 +1,572 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Матрица</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Bundle JS (jsDelivr CDN) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Shantell+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <!-- font-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <!-- Tempus Dominus JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.js"></script>
+    <!--<script src="https://unpkg.com/imask@6.4.3/dist/imask.js"></script> -->
+    <!--<script src="https://unpkg.com/imask"></script>-->
+    <script src="imask.js"></script>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+<body id="grate-body">
+<div class="container font-google1">
+<br>
+<br>
+<br>
+    <div class="d-flex align-items-center justify-content-center">
+    <!--    <H1 class="text-center font-google1 border border-dark border-5 p-3">RENA<br>CRAZY</H1>    -->
+    </div>
+<br>
+    <!--<div class="d-flex align-items-center justify-content-center">
+    <div class="badge bg-secondary  " >
+      <H1 class="text-center font-google1 p-3" style="font-weight: 800">RENA<br>CRAZY</H1> 
+    </div>
+</div>
+-->
+<div class="d-flex align-items-center justify-content-center">
+    <div><img src="logo.jpg" style="width: 30%;"></div>
+
+    <div><H4 class="text-uppercase text-center ">психоанализ по дате рождения</H4></div>
+</div>
+<br>
+<div class="form-floating text-center d-flex align-items-center justify-content-center">
+    <div class="form-floating" style="width: 50%;">
+      <input type="text"
+             class="form-control text-center "
+             id="floatingInput"
+             placeholder="__.__.____"
+             data-mask="date" >
+      <label class="text-center " for="floatingInput"></label>
+    </div>
+</div>
+    <br>
+<div class="text-center gx-2 gy-4">
+    <button type="button"
+            id="rasschetButton"
+            class="btn btn-danger bg-gradient"
+            data-bs-target="#staticBackdrop"
+            style="width: 50%;height: 50px;">
+      РАССЧИТАТЬ
+    </button>
+</div>
+<br>
+<div class="  ">
+  <div class="row ">
+    <div class="col-sm-9 gx-2 gy-2 float-left">
+        <div class="p-1 border bg-light">
+            <small class="text-dark">Дата рождения: </small>
+            <small class="lead leader text-dark" id="data_r">нет</small>
+            <br>
+            
+            <small class="text-dark">Дополнительные числа:</small>
+            <small class="lead leader" id="dop_c">нет</small>
+            <br>
+            <small class="text-dark">Число судьбы: </small>
+            <small id="sudba" class="lead leader">нет</small>
+            <br>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2 text-center">
+        <div class="p-3 border bg-secondary bg-gradient">
+            <small class="text-dark">
+                Темперамент
+            </small>
+            <br>
+            <p class="lead font-white" id="temper">нет</p>
+        </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">
+                Характер
+            </small>
+            <br>
+            <p class="lead leader" id="xarakter">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">Здоровье</small>
+            <br>
+            <p class="lead leader" id="zdor">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">Удача</small>
+            <br>
+            <p class="lead leader" id="udacha">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-secondary">
+            <small class="text-dark">Цель</small>
+            <br>
+            <p class="lead font-white" id="cel">нет</p>
+        </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">Энергия</small>
+            <br>
+            <p class="lead leader" id="energy">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">Логика</small>
+            <br>
+            <p class="lead leader" id="logik">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">Долг</small>
+            <br>
+            <p class="lead leader" id="dolg">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-secondary">
+            <small class="text-dark">Семья</small>
+            <br>
+            <p class="lead font-white" id="semya">нет</p>
+        </div>
+    </div>
+</div>
+  <div class="row text-center">
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">Интерес</small>
+            <br>
+            <p class="lead leader" id="interes">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">Труд</small>
+            <br>
+            <p class="lead leader" id="trud">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-light">
+            <small class="text-dark">Память</small>
+            <br>
+            <p class="lead leader" id="pamyat">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-secondary">
+            <small class="text-dark">Привычки</small>
+            <br>
+            <p class="lead font-white" id="privuchki">нет</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row text-center">
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 "></div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 border bg-secondary">
+            <small class="text-dark">Быт</small>
+            <br>
+            <p class="lead font-white" id="but">нет</p>
+        </div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 "></div>
+    </div>
+    <div class="col-sm-3 gx-2 gy-2">
+        <div class="p-3 "></div>
+    </div>
+</div>
+</div>
+<br>
+
+
+<div class="row text-center gx-2 gy-4">
+<div class="clipboard-example align-items-center ">
+    <div class="input-group bg-light mb-3">
+        <input id="in01"
+           type="text"
+           class="form-control"
+           placeholder="Результат..."
+           aria-label=""
+           aria-describedby="btn01"
+           value=""
+           readonly>
+        <button id="btn01"
+            class="btn btn-danger btn-gradient"
+            type="button"
+            data-clipboard-demo=""
+            data-clipboard-target="#in01"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Скопировать">
+                Скопировать
+        </button>
+    </div>
+</div>
+</div>
+<br>
+</div>
+
+<div class="footer  ">
+<div class="row text-center ">
+
+    <div class="social instagram col-sm-4 ">
+        <a href="https://www.instagram.com/psycons__numbers?igsh=MW5pYWoyYnp4Z3Z5cA%3D%3D&utm_source=qr"
+           target="_blank">
+            <i class="fa fa-instagram fa-5x" style="color: #6c757d;">
+            </i>
+        </a>
+    </div>
+<!--    <div class="social vk col-sm-3 gx-2 gy-2">
+        <a href="#" target="_blank"><i class="fa fa-vk fa-3x"></i></a>    
+    </div>
+    <div class="social odnoklassniki col-sm-3 gx-2 gy-2">
+        <a href="#" target="_blank"><i class="fa fa-odnoklassniki fa-3x"></i></a>   
+    </div>-->
+    <div class="social telegram col-sm-4 ">
+        <a href="https://t.me/numberswithlove" target="_blank">
+            <i class="fa fa-paper-plane fa-5x" style="color: #6c757d;">
+            </i>
+        </a>
+    </div>
+    <div class="social whatsapp col-sm-4 ">
+        <a href="https://wa.me/qr/WELT2SKLNIR4L1" target="_blank">
+            <i class="fa fa-whatsapp fa-5x" style="color: #6c757d;">
+            </i>
+        </a>
+    </div>
+    </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<style>
+
+
+
+
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
+
+/* selected link */
+a:active {
+  color: black;
+}
+
+.social-icons-1 {
+    padding: 0;
+    list-style: none;
+    margin: 10px;
+}
+.social-icons-1 li {
+    display: inline-block;
+    position: relative;
+    font-size: 24px;
+}
+.social-icons-1 i,
+.social-icons-1 img {
+    color: #fff;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 24px;
+    height: 24px;
+    text-align:center;
+    transition: all 0.3s ease-out;
+}
+.social-icons-1 a {
+    display: inline-block;
+}
+.social-icons-1 a:before {
+    transform: scale(1);
+    content: "";
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: block;
+    background: linear-gradient(45deg, #337AB7, #2d6b9f);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-out;
+}
+.social-icons-1 a:hover:before {
+    transform: scale(0);
+    transition: all 0.3s ease-in;
+}
+.social-icons-1 a:hover i,
+.social-icons-1 a:hover img {
+    transform: scale(1.8);
+    color: #337AB7;
+    transition: all 0.3s ease-in;
+}
+
+</style>  
+
+<script type="text/javascript">
+
+const element = document.querySelector(`[data-mask="date"]`) // ищем поля ввода по селектору с переданным значением data-атрибута
+const globalMask = IMask(element, {
+    mask: Date,
+    pattern: 'd.m.Y',
+    blocks: {
+        d: {
+            mask: IMask.MaskedRange,
+            from: 1,
+            to: 31,
+            maxLength: 2,
+        },
+        m: {
+            mask: IMask.MaskedRange,
+            from: 1,
+            to: 12,
+            maxLength: 2,
+        },
+        Y: {
+            mask: IMask.MaskedRange,
+            from: 1900,
+            to: 2200,
+            maxLength:4,
+        },
+    }
+    });
+
+let globalArrayForP = document.querySelectorAll('p');
+let globalArrayForSmall = document.querySelectorAll('small');
+let arr = [];
+
+
+for (let i = 0, length = globalArrayForP.length; i < length; i++) {
+    if (globalArrayForP[i].innerText === 'нет'){
+        arr.push(globalArrayForP[i]);
+    }
+}
+
+for (let i = 0, length = globalArrayForSmall.length; i < length; i++) {
+    if (globalArrayForSmall[i].innerText === 'нет'){
+        arr.push(globalArrayForSmall[i]);
+    }
+}
+
+const select = document.querySelector('#selectYear');
+let rasschetButton = document.querySelector("#rasschetButton");
+rasschetButton.addEventListener("click", function() {
+
+
+    for (let i = 0, length = arr.length; i < length; i++) {
+            arr[i].innerText = 'нет';
+    }
+
+    pp = document.getElementById('in01')
+    pp.value = ""
+
+    let textdate = document.getElementById("floatingInput").value;
+    if (textdate === ""){
+        return;
+    }
+
+    masdate = textdate.toString().split('.');
+    let year = masdate[2];
+    let month = masdate[1];
+    if(month < 10){
+        month = month[1];
+    }    
+    let day = masdate[0];
+    if(day < 10){
+        day = day[1];
+        //console.log(day);
+    }
+    let strdata = day +'.'+month+'.'+year;
+
+    // alert( eval(year.toString().replace(/\d/g, '+$&')) );
+    pdopch =  eval(year.toString().replace(/\d/g, '+$&')) +
+              eval(month.toString().replace(/\d/g, '+$&')) +
+              eval(day.toString().replace(/\d/g, '+$&'));
+    
+    vtdopch = eval(pdopch.toString().replace(/\d/g, '+$&'));
+    trdopch = pdopch - (2 * ((day+'')[0]));
+    chdopch = eval(trdopch.toString().replace(/\d/g, '+$&'));
+
+    str_dop_ch = pdopch+', '+vtdopch+', '+trdopch+', '+chdopch
+    str2 = str_dop_ch +',' + strdata
+    // console.log(str2);    
+    povtor1 = str2.split("1").length - 1;
+    povtor2 = str2.split("2").length - 1;
+    povtor3 = str2.split("3").length - 1;
+    povtor4 = str2.split("4").length - 1;
+    povtor5 = str2.split("5").length - 1;
+    povtor6 = str2.split("6").length - 1;
+    povtor7 = str2.split("7").length - 1;
+    povtor8 = str2.split("8").length - 1;
+    povtor9 = str2.split("9").length - 1;
+
+    temper = povtor3 + povtor5 + povtor7;
+    but    = povtor4 + povtor5 + povtor6;
+    cel    = povtor1 + povtor4 + povtor7;
+    semya  = povtor2 + povtor5 + povtor8;
+    privuchki = povtor3 + povtor6 + povtor9;
+
+    if (temper > 0) document.getElementById('temper').innerText = temper;
+    else document.getElementById('temper').innerText = 'нет';
+    if(but > 0) document.getElementById('but').innerText = but;
+    else document.getElementById('but').innerText = 'нет';
+    if(cel > 0) document.getElementById('cel').innerText = cel;
+    else document.getElementById('temper').innerText = 'нет';
+    
+    if(semya > 0) document.getElementById('semya').innerText = semya;
+    else document.getElementById('semya').innerText = 'нет';
+    if(privuchki > 0) document.getElementById('privuchki').innerText = privuchki;
+    else document.getElementById('semya').innerText = 'нет';
+    document.getElementById('dop_c').innerText = str_dop_ch;
+
+    document.getElementById('data_r').innerText = strdata.toLocaleString().split(',')[0];
+
+    sudba = 0
+    if (vtdopch.length == 1)
+        sudba = vtdopch
+    else{
+        if (vtdopch == 11) {sudba = 11;}
+	else
+        	sudba = eval(vtdopch.toString().replace(/\d/g, '+$&'));
+    }
+	//console.log(sudba);
+    document.getElementById('sudba').innerText = sudba;
+    document.getElementById('in01').value = '1'.repeat(povtor1)+'/'+
+                                        '2'.repeat(povtor2)+'/'+
+                                        '3'.repeat(povtor3)+'/'+
+                                        '4'.repeat(povtor4)+'/'+
+                                        '5'.repeat(povtor5)+'/'+
+                                        '6'.repeat(povtor6)+'/'+
+                                        '7'.repeat(povtor7)+'/'+
+                                        '8'.repeat(povtor8)+'/'+
+                                        '9'.repeat(povtor9)+'   ЧС '+sudba;
+
+    if (povtor1 > 0) 
+        document.getElementById('xarakter').innerText = '1'.repeat(povtor1);
+    else document.getElementById('xarakter').innerText = 'нет';
+    if (povtor2 > 0) 
+        document.getElementById('energy').innerText = '2'.repeat(povtor2);
+    else document.getElementById('energy').innerText = 'нет';
+    if (povtor3 > 0) 
+        document.getElementById('interes').innerText = '3'.repeat(povtor3);
+    else document.getElementById('interes').innerText = 'нет';
+    if (povtor4 > 0)
+        document.getElementById('zdor').innerText = '4'.repeat(povtor4);
+    else document.getElementById('zdor').innerText = 'нет';
+    if (povtor5 > 0) 
+        document.getElementById('logik').innerText = '5'.repeat(povtor5);
+    else document.getElementById('logik').innerText = 'нет';
+    if (povtor6 > 0 )
+        document.getElementById('trud').innerText = '6'.repeat(povtor6);
+    else document.getElementById('trud').innerText = 'нет';
+    if (povtor7 > 0) 
+        document.getElementById('udacha').innerText = '7'.repeat(povtor7);
+    else document.getElementById('udacha').innerText = 'нет';
+    if (povtor8 > 0 )
+        document.getElementById('dolg').innerText = '8'.repeat(povtor8);
+    else document.getElementById('dolg').innerText = 'нет';
+    if (povtor9 > 0 )
+        document.getElementById('pamyat').innerText = '9'.repeat(povtor9);
+    else document.getElementById('pamyat').innerText = 'нет';
+
+    textd = document.getElementById("floatingInput");
+    textd.value = "";
+    globalMask.value = "";
+});
+
+    // var startDate = document.getElementById('startDate');
+    let btn = document.getElementById('btn01');
+    let clipboard = new ClipboardJS(btn);
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+
+</script>
+
+<style>
+
+body {
+  font-family: 'Roboto', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.footer{
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.container{
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.leaderr {
+    color: rgb(255, 0, 0);
+}
+.font-white{
+    color: rgb(255, 255, 255);   
+}
+
+.font-google1{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.font-google2{
+    font-family: 'Pacifico', cursive;
+    font-family: 'Shantell Sans', cursive;
+}
+</style>
+
+</body>
+</html>
